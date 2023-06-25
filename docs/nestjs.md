@@ -1,5 +1,5 @@
 # NestJS Code Style Guide
-This document outlines the recommended code style guidelines for writing **NestJS** applications, with a focus on using **TypeORM** and **PostgreSQL** for database interactions. Following a consistent code style helps improve readability, maintainability, and collaboration within your team.
+This document outlines the recommended code style guidelines for writing `NestJS` applications, with a focus on using `TypeORM` and `PostgreSQL` for database interactions. Following a consistent code style helps improve readability, maintainability, and collaboration within your team.
 
 ## Table of Contents
 - [General Principles](#general-principles)<br/>
@@ -18,16 +18,16 @@ This document outlines the recommended code style guidelines for writing **NestJ
 Consistency: Maintain consistent coding style throughout the project.
 Readability: Write code that is easy to read and understand.
 Modularity: Encourage modular code structure and reusability.
-**SOLID** Principles: Aim to follow the **SOLID** principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) to write maintainable code.
+`SOLID` Principles: Aim to follow the `SOLID` principles (Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion) to write maintainable code.
 ## Naming Conventions
-Files and Directories: Use kebab-case for file and directory names (e.g., **user.service.ts**, **user.controller.ts**).
-Classes: Use PascalCase for class names (e.g., **UserService**, **UserController**).
-Variables and Functions: Use camelCase for variable and function names (e.g., **getUserById**, **userData**).
-Interfaces: Use PascalCase with an I prefix for interface names (e.g., **IUser**, **IToken**).
-Enums: Use PascalCase for enum names and **UPPER_SNAKE_CASE** for enum values (e.g., **UserRole**, **HTTP_STATUS**).
-Constants: Use **UPPER_SNAKE_CASE** for constant names (e.g., **MAX_ATTEMPTS**, **DEFAULT_PORT**).
+Files and Directories: Use kebab-case for file and directory names (e.g., `user.service.ts`, `user.controller.ts`).
+Classes: Use PascalCase for class names (e.g., `UserService`, `UserController`).
+Variables and Functions: Use camelCase for variable and function names (e.g., `getUserById`, `userData`).
+Interfaces: Use PascalCase with an I prefix for interface names (e.g., `IUser`, `IToken`).
+Enums: Use PascalCase for enum names and `UPPER_SNAKE_CASE` for enum values (e.g., `UserRole`, `HTTP_STATUS`).
+Constants: Use `UPPER_SNAKE_CASE` for constant names (e.g., `MAX_ATTEMPTS`, `DEFAULT_PORT`).
 ## File Structure
-Organize your project files and directories based on their functionality and modules. A typical file structure for a **NestJS** application may look like:
+Organize your project files and directories based on their functionality and modules. A typical file structure for a `NestJS` application may look like:
 
 ```
 /src
@@ -70,10 +70,10 @@ import { UserService } from './user.service';
 import { Logger } from '../common/config/logger';
 ```
 ## Controllers
-Use **kebab-case** for route names and **camelCase** for controller class names.
+Use `kebab-case` for route names and `camelCase` for controller class names.
 Use the appropriate HTTP method decorators (`@Get()`, `@Post()`, `@Put()`, `@Delete()`, etc.) for defining routes.
 Keep the controller methods concise and focused on a specific task.
-Use **DTO** (Data Transfer Objects) for validating and sanitizing incoming data.
+Use `DTO` (Data Transfer Objects) for validating and sanitizing incoming data.
 
 ```typescript
 import { Controller, Get, Post, Body } from '@nestjs/common';
@@ -96,7 +96,7 @@ export class UserController {
 }
 ```
 ## Services
-Use **PascalCase** for service class names.
+Use `PascalCase` for service class names.
 Keep the service methods focused on a single responsibility.
 Avoid complex logic in services and move it to dedicated helper classes or utilities if needed.
 Use dependency injection to provide required dependencies.
@@ -121,7 +121,7 @@ export class UserService {
 }
 ```
 ## Modules
-Use **kebab-case** for module file names and **PascalCase for** module class names.
+Use `kebab-case` for module file names and `PascalCase for` module class names.
 Maintain a separate module for each logical section of your application.
 Use the `@Module()` decorator to define and configure modules.
 Organize module imports by separating them into three blocks:
@@ -161,9 +161,9 @@ export class UserService {
 }
 ```
 ## Error Handling
-Use **try-catch** blocks to handle and process errors.
+Use `try-catch` blocks to handle and process errors.
 Throw custom exceptions when necessary to provide meaningful error messages.
-Use **NestJS** built-in exception filters to handle and format errors sent to the client.
+Use `NestJS` built-in exception filters to handle and format errors sent to the client.
 ```typescript
 import { NotFoundException } from '@nestjs/common';
 
@@ -212,11 +212,11 @@ describe('UserService', () => {
 });
 ```
 ## Database
-When using **TypeORM** with **PostgreSQL** for database interactions, consider the following guidelines:
+When using `TypeORM` with `PostgreSQL` for database interactions, consider the following guidelines:
 
 Define your entity classes to map database tables, using the appropriate decorators provided by TypeORM (`@Entity()`, `@Column()`, etc.).
 Use repositories (`@Repository()`) to encapsulate database operations and provide a clean interface for interacting with entities.
-Configure the database connection and TypeORM settings in the **ormconfig.js** or **ormconfig.json** file.
+Configure the database connection and TypeORM settings in the `ormconfig.js` or `ormconfig.json` file.
 Leverage migrations to manage database schema changes over time. Use the typeorm migration:generate, typeorm migration:run, and typeorm migration:revert commands to create, apply, and revert migrations.
 ```typescript
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
@@ -259,4 +259,4 @@ export class UserRepository {
   }
 }
 ```
-These guidelines provide a starting point for maintaining a consistent and readable code style in your **NestJS** projects, especially when using **TypeORM** with **PostgreSQL** for database interactions. Remember to adapt and extend these guidelines based on the specific needs and preferences of your team.
+These guidelines provide a starting point for maintaining a consistent and readable code style in your `NestJS` projects, especially when using `TypeORM` with `PostgreSQL` for database interactions. Remember to adapt and extend these guidelines based on the specific needs and preferences of your team.
