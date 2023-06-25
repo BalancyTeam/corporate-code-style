@@ -232,8 +232,8 @@ export class User {
   @Column()
   lastName: string;
 }
-typescript
-Copy code
+```
+```typescript
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
